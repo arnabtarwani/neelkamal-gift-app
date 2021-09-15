@@ -1,0 +1,13 @@
+## Todo List
+
+☐ Create a backend for the app 
+☐ Store User information in firebase
+    ☐ PhoneNumber to be primary key 
+    ☐ Create Items dropdown list for user selection in the user details form
+    ☐ Add Form validations
+☐ Store Neelkamal Gift Images on firestore
+☐ Show scratch card only when user information is filled
+☐ Once scratch card is used, user cannot use another scratch card
+☐ Once on scratch card screen, user cannot go back 
+☐ Once scratch card complete - show Hurray message with Name 
+☐ Also, show how many gifts are remaining on the app 
