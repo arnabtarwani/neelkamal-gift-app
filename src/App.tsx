@@ -8,12 +8,12 @@
  * @format
  */
 
-import { DarkTheme, NavigationContainer, ThemeProvider, useTheme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationStack } from './utils/NavigationStack';
-import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider } from '@apollo/client'
-import { Platform, StatusBar } from 'react-native';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import { StatusBar } from 'react-native';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000',
@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <ApolloProvider client={client}>
-      <StatusBar backgroundColor="#1148d4" />
+      <StatusBar backgroundColor="#0a0a0a" />
       <NavigationContainer>
         <NavigationStack />
       </NavigationContainer>
