@@ -200,9 +200,9 @@ export default function DetailsScreen({ route }: any) {
                             } />
 
 
-                            <Text style={{ fontSize: 14, margin: 0, textAlign: 'center' }}>
+                            {/* <Text style={{ fontSize: 14, margin: 0, textAlign: 'center' }}>
                                 Remaining: {updatedItemCount}
-                            </Text>
+                            </Text> */}
                         </>
                     )}
                 </View>
