@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.app",
+  "applicationId": "com.neelkamal2.app",
   "variantName": "release",
   "elements": [
     {

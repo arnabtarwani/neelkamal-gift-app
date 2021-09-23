@@ -75,7 +75,7 @@ export default function DetailsScreen({ route }: any) {
 
     const handleScratchCard = async () => {
 
-        console.log({ name: userData.name, phone_number: userData.phoneNumber, item_purchased: userData.item, scratch_card_id: scratchCardId })
+        // console.log({ name: userData.name, phone_number: userData.phoneNumber, item_purchased: userData.item, scratch_card_id: scratchCardId })
 
 
         const { data, error } = await supabase
