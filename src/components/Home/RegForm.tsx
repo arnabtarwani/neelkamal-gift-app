@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Formik } from 'formik';
@@ -22,20 +22,49 @@ const loginValidationSchema = yup.object().shape({
 interface DataProps {
     name: string,
     phoneNumber: string,
-    item: string
+    item: string,
+    dbCheckCount?: boolean
 }
 
 const RegForm: React.FC = ({ route }: any) => {
 
     const navigation = useNavigation();
-    const handleSubmit = async ({ name, phoneNumber, item }: DataProps) => {
+    const [dbCheckItemCount, setDBCheckItemCount] = useState(false)
+    const [itemArrayLength, setItemArrayLength] = useState(false)
+
+    const handleSubmit = async ({ name, phoneNumber, item, dbCheckCount }: DataProps) => {
         // console.log(values);
 
-        if ({ name, phoneNumber, item }) {
-            navigation.navigate({ name: 'Details', params: {name, phoneNumber, item} } as any)
+        if ({ name, phoneNumber, item, dbCheckCount }) {
+            navigation.navigate({ name: 'Details', params: { name, phoneNumber, item, dbCheckCount: dbCheckItemCount, itemArrayLength: itemArrayLength } } as any)
         }
     }
 
+    const checkItemCount = async () => {
+        const { data, error } = await supabase
+            .from('scratch_prize')
+            .select('item_count')
+
+        let item_array: any = [];
+
+        data?.forEach(el => {
+            Object.values(el).map((item: any) => item_array.push(item))
+        })
+
+
+        for (let i = 0; i < item_array.length; i++) {
+            if (item_array[i] > 0) {
+                setDBCheckItemCount(true)
+                setItemArrayLength(item_array.length)
+            }
+        }
+
+
+    }
+
+    useEffect(() => {
+        checkItemCount()
+    }, [dbCheckItemCount])
 
     return (
         <Formik

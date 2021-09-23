@@ -1,6 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import DetailsScreen from '../screens/Details';
+import DetailsScreen from '../screens/ScratchCard';
 import HomeScreen from '../screens/Home';
 
 export function NavigationStack(props: any) {

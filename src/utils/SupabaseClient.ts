@@ -1,10 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
-import { REACT_APP_SUPABASE_URL, REACT_APP_SUPABASE_ANON_KEY, JWT_TOKEN } from "@env"
+import { NEELKAMAL_APP_1_APP_URL, NEELKAMAL_APP_1_DB_KEY, NEELKAMAL_APP_2_APP_URL, NEELKAMAL_APP_2_DB_KEY } from "@env"
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const supabaseUrl = REACT_APP_SUPABASE_URL
+const supabaseUrl = NEELKAMAL_APP_2_APP_URL 
 
-const supabaseAnonKey = REACT_APP_SUPABASE_ANON_KEY
+const supabaseAnonKey = NEELKAMAL_APP_2_DB_KEY
 
 const options = {
     localStorage: AsyncStorage as any,
