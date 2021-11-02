@@ -61,7 +61,7 @@ export default function DetailsScreen({ route }: any) {
             .eq('item_id', number)
 
         data?.forEach(el => {
-
+            
             if (el.item_count !== 0) {
                 setScratchCardImage(el.item_image)
                 setScratchCardPrizeText(el.item_name)
@@ -90,6 +90,7 @@ export default function DetailsScreen({ route }: any) {
             .from('scratch_prize')
             .update({ item_count: scratchItemCount - 1 })
             .eq('id', scratchCardId)
+        
 
         data?.forEach(el => {
             if (el.item_count == 0) return;

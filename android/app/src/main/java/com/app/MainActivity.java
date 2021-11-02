@@ -1,4 +1,4 @@
-package com.neelkamal2.app;
+package com.neelkamal3.app;
 
 import com.facebook.react.ReactActivity;
 import org.devio.rn.splashscreen.SplashScreen;
